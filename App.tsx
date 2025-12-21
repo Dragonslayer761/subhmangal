@@ -174,7 +174,7 @@ const App: React.FC = () => {
           <div className="mt-12 text-center">
             <p className="text-neutral-500 text-sm">
               * Prices subject to change based on specific requirements and dates.
-              <span className="text-premiumGold ml-1 cursor-pointer hover:underline">Contact for customized quotes.</span>
+              <a href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent("Hi , I am looking for customized package. Can we talk about that ?")}`}><span className="text-premiumGold ml-1 cursor-pointer hover:underline">Contact for customized quotes.</span></a>
             </p>
           </div>
         </div>
