@@ -1,4 +1,32 @@
 import { WeddingPackage, AddOnService } from "./types";
+import img1 from "./assets/images/MAN_3088.jpg";
+import img2 from "./assets/images/DSC_1128.jpg";
+import img3 from "./assets/images/10.jpg";
+import img4 from "./assets/images/ANK_4971_1.jpg";
+import img5 from "./assets/images/30.jpg";
+import img6 from "./assets/images/SD709530.jpg";
+import img7 from "./assets/images/MAN_2668.jpg";
+import img8 from "./assets/images/SEN_1949.jpg";
+import img9 from "./assets/images/(25).jpg";
+import img10 from "./assets/images/1.jpg";
+import img11 from "./assets/images/21.jpg";
+import img12 from "./assets/images/22.jpg";
+import img13 from "./assets/images/wl2.jpg";
+import img14 from "./assets/images/23.jpg";
+import img15 from "./assets/images/2(1).jpg";
+import img16 from "./assets/images/L29.jpg";
+import img17 from "./assets/images/26.jpg";
+import img18 from "./assets/images/(55).jpg";
+import img19 from "./assets/images/27.jpg";
+import img20 from "./assets/images/w11.jpg";
+import img21 from "./assets/images/30.jpg";
+import img22 from "./assets/images/31.jpg";
+import img23 from "./assets/images/32.jpg";
+import img24 from "./assets/images/34.jpg";
+import img25 from "./assets/images/12.jpg";
+import img26 from "./assets/images/37.jpg";
+import img27 from "./assets/images/36.jpg";
+import img28 from "./assets/images/39.jpg";
 
 // Generated SVG Logo Data URI based on description: White text, Red dot, Green leaf
 export const LOGO_URL =
@@ -126,169 +154,169 @@ export const PORTFOLIO_ITEMS = [
   {
     id: 1,
     category: "Ring Ceremony",
-    url: "../assets/images/MAN_3088.jpg",
+    url: img1,
     title: "Couple Shoot",
   },
   {
     id: 2,
     category: "Wedding",
-    url: "../assets/images/DSC_1128.jpg",
+    url: img2,
     title: "Sindoor Daan",
   },
   {
     id: 3,
     category: "Pre-wedding",
-    url: "../assets/images/10.jpg",
+    url: img3,
     title: "Golden Hour Moments",
   },
   {
     id: 4,
     category: "Wedding",
-    url: "../assets/images/ANK_4971_1.jpg",
+    url: img4,
     title: "The Varmala",
   },
   {
     id: 5,
     category: "Ring Ceremony",
-    url: "../assets/images/H6.jpg",
+    url: img5,
     title: "Haldi Ceremony",
   },
   {
     id: 6,
     category: "Pre-wedding",
-    url: "../assets/images/SD709530.jpg",
+    url: img6,
     title: "Casual Romance",
   },
   {
     id: 7,
     category: "Wedding",
-    url: "../assets/images/MAN_2668.jpg",
+    url: img7,
     title: "The Grand Entrance",
   },
   {
     id: 8,
     category: "Ring Ceremony",
-    url: "../assets/images/SEN_1949.jpg",
+    url: img8,
     title: "Sacred Fire",
   },
   {
     id: 9,
     category: "Pre-wedding",
-    url: "../assets/images/(25).jpg",
+    url: img9,
     title: "Playful Moments",
   },
   {
     id: 10,
     category: "Pre-wedding",
-    url: "../assets/images/1.jpg",
+    url: img10,
     title: "Romantic Prelude",
   },
   {
     id: 11,
     category: "Pre-wedding",
-    url: "../assets/images/21.jpg",
+    url: img11,
     title: "Tender Embrace",
   },
   {
     id: 12,
     category: "Pre-wedding",
-    url: "../assets/images/22.jpg",
+    url: img12,
     title: "Blissful Beginning",
   },
   {
     id: 13,
     category: "Pre-wedding",
-    url: "../assets/images/wl2.jpg",
+    url: img13,
     title: "Ganges Sunset Serenade",
   },
   {
     id: 14,
     category: "Pre-wedding",
-    url: "../assets/images/23.jpg",
+    url: img14,
     title: "Forever Starts Here",
   },
   {
     id: 15,
     category: "Pre-wedding",
-    url: "../assets/images/2(1).jpg",
+    url: img15,
     title: "Eternal Vows",
   },
   {
     id: 16,
     category: "Pre-wedding",
-    url: "../assets/images/L29.jpg",
+    url: img16,
     title: "Heritage of Love",
   },
   {
     id: 17,
     category: "Pre-wedding",
-    url: "../assets/images/26.jpg",
+    url: img17,
     title: "Victoria Memorial Whispers",
   },
   {
     id: 18,
     category: "Pre-wedding",
-    url: "../assets/images/(55).jpg",
+    url: img18,
     title: "Sunlit Promises",
   },
   {
     id: 19,
     category: "Wedding",
-    url: "../assets/images/27.jpg",
+    url: img19,
     title: "Sacred Vows",
   },
   {
     id: 20,
     category: "Wedding",
-    url: "../assets/images/w11.jpg",
+    url: img20,
     title: "Joyful Union",
   },
   {
     id: 21,
     category: "Wedding",
-    url: "../assets/images/30.jpg",
+    url: img21,
     title: "Eternal Bond",
   },
   {
     id: 22,
     category: "Wedding",
-    url: "../assets/images/31.jpg",
+    url: img22,
     title: "Graceful Moments",
   },
   {
     id: 24,
     category: "Wedding",
-    url: "../assets/images/34.jpg",
+    url: img24,
     title: "Together Forever",
   },
   {
     id: 23,
     category: "Wedding",
-    url: "../assets/images/32.jpg",
+    url: img23,
     title: "Haldi Highlights",
   },
   {
     id: 25,
     category: "Wedding",
-    url: "../assets/images/12.jpg",
+    url: img25,
     title: "Ceremonial Bliss",
   },
   {
     id: 26,
     category: "Wedding",
-    url: "../assets/images/37.jpg",
+    url: img26,
     title: "Ceremonial Bliss",
   },
   {
     id: 28,
     category: "Wedding",
-    url: "../assets/images/39.jpg",
+    url: img28,
     title: "Smiles of Joy",
   },
   {
     id: 27,
     category: "Wedding",
-    url: "../assets/images/36.jpg",
+    url: img27,
     title: "Ceremonial Bliss",
   },
 ];
