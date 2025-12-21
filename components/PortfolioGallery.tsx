@@ -3,7 +3,7 @@ import { PORTFOLIO_ITEMS } from '../constants';
 
 export const PortfolioGallery: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const filters = ['All', 'Wedding', 'Pre-wedding', 'Rituals'];
+  const filters = ['All', 'Wedding', 'Pre-wedding', 'Ring Ceremony'];
 
   const filteredItems = activeFilter === 'All'
     ? PORTFOLIO_ITEMS
@@ -21,8 +21,8 @@ export const PortfolioGallery: React.FC = () => {
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 className={`px-6 py-2 rounded-full text-sm transition-all duration-300 ${activeFilter === filter
-                    ? 'bg-red-900 text-white border border-red-700'
-                    : 'bg-transparent text-neutral-400 border border-neutral-700 hover:border-neutral-500 hover:text-white'
+                  ? 'bg-red-900 text-white border border-red-700'
+                  : 'bg-transparent text-neutral-400 border border-neutral-700 hover:border-neutral-500 hover:text-white'
                   }`}
               >
                 {filter}
@@ -44,7 +44,7 @@ export const PortfolioGallery: React.FC = () => {
               <img
                 src={item.url}
                 alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110  group-hover:grayscale-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <span className="text-amber-500 text-xs uppercase tracking-wider mb-1">{item.category}</span>

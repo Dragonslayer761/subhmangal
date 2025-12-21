@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { PackageCard } from './components/PackageCard';
 import { PortfolioGallery } from './components/PortfolioGallery';
-import { PACKAGES, ADD_ONS, CONTACT_INFO, LOGO_URL } from './constants';
+import { PACKAGES, ADD_ONS, CONTACT_INFO } from './constants';
 import { Camera, Heart, Mail, Phone, MapPin, Instagram, Menu, X, ArrowDown } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import img from './assets/images/MAN_3088.jpg';
 import img2 from './assets/images/DSC_1128.jpg';
 import img3 from './assets/images/SEN_1949.jpg';
 import img4 from './assets/images/ANK_4971_1.jpg';
+import LOGO_URL from './assets/images/logo.png';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +22,7 @@ const App: React.FC = () => {
           <div className="flex items-center justify-between h-24">
             <div className="flex-shrink-0 flex items-center">
               {/* Logo Image */}
-              <img src={LOGO_URL} alt="Subhmangal Photography" className="h-12 w-auto object-contain" />
+              <img src={LOGO_URL} alt="Subhmangal Photography" className="h-[10rem] w-auto object-contain" />
             </div>
 
             {/* Desktop Menu */}
@@ -78,11 +80,11 @@ const App: React.FC = () => {
           {/* Text Content */}
           <div className="text-center md:text-left mt-10 md:mt-0">
             <div className="inline-block mb-6 animate-fade-in-up">
-              <span className="text-premiumGold tracking-[0.3em] uppercase text-xs sm:text-sm border-b border-premiumGold/30 pb-2">Traditional Bengali Photography</span>
+              <span className="text-premiumGold tracking-[0.3em] uppercase text-xs sm:text-sm border-b border-premiumGold/30 pb-2">Traditional Wedding Photography</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
               Capturing the Soul of <br />
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-premiumGold to-lightGold">Shubho Parinay</span>
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-premiumGold to-lightGold">Precious Memories</span>
             </h2>
             <p className="text-lg text-neutral-400 max-w-xl mx-auto md:mx-0 mb-10 font-light leading-relaxed">
               We weave stories of love, rituals, and emotions into cinematic masterpieces.
@@ -199,6 +201,28 @@ const App: React.FC = () => {
                   </div>
                   <span className="group-hover:text-white transition-colors">{CONTACT_INFO.phone}</span>
                 </div>
+                <a href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-neutral-300 group">
+                  <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-premiumGold group-hover:bg-premiumGold group-hover:text-black transition-colors">
+                    <FaWhatsapp width={20} height={20} />
+                  </div>
+                  <span className="group-hover:text-white transition-colors">{CONTACT_INFO.whatsapp}</span>
+                </a>
+                <a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-neutral-300 group">
+                  <div className="flex items-center gap-4 text-neutral-300 group">
+                    <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-premiumGold group-hover:bg-premiumGold group-hover:text-black transition-colors">
+                      <FaInstagram className={"w-5 h-5"} />
+                    </div>
+                    <span className="group-hover:text-white transition-colors">subhmangal.kolkata</span>
+                  </div>
+                </a>
+                <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-neutral-300 group">
+                  <div className="flex items-center gap-4 text-neutral-300 group">
+                    <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-premiumGold group-hover:bg-premiumGold group-hover:text-black transition-colors">
+                      <FaFacebook className={"w-5 h-5"} />
+                    </div>
+                    <span className="group-hover:text-white transition-colors">SubhMangal</span>
+                  </div>
+                </a>
 
                 <div className="flex items-center gap-4 text-neutral-300 group">
                   <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-premiumGold group-hover:bg-premiumGold group-hover:text-black transition-colors">
@@ -215,14 +239,6 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-8 flex gap-4">
-                <a href="#" className="p-3 bg-neutral-800 rounded-full hover:bg-neutral-700 hover:text-premiumGold transition-colors border border-transparent hover:border-premiumGold/30">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="p-3 bg-neutral-800 rounded-full hover:bg-neutral-700 hover:text-premiumGold transition-colors border border-transparent hover:border-premiumGold/30">
-                  <Camera className="w-5 h-5" />
-                </a>
-              </div>
             </div>
 
             <div className="bg-black/50 p-8 rounded-lg border border-white/10">
