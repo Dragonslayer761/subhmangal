@@ -1,12 +1,12 @@
 import { WeddingPackage, AddOnService } from "./types";
-import img1 from "./assets/images/MAN_3088.jpg";
+import img1 from "./assets/images/rc1.jpg";
 import img2 from "./assets/images/DSC_1128.jpg";
 import img3 from "./assets/images/10.jpg";
 import img4 from "./assets/images/ANK_4971_1.JPG";
-import img5 from "./assets/images/30.JPG";
+import img5 from "./assets/images/rc2.JPG";
 import img6 from "./assets/images/SD709530.jpg";
 import img7 from "./assets/images/MAN_2668.jpg";
-import img8 from "./assets/images/SEN_1949.jpg";
+import img8 from "./assets/images/rc6.jpg";
 import img9 from "./assets/images/(25).jpg";
 import img10 from "./assets/images/1.jpg";
 import img11 from "./assets/images/21.jpg";
@@ -27,6 +27,9 @@ import img25 from "./assets/images/12.jpg";
 import img26 from "./assets/images/37.jpg";
 import img27 from "./assets/images/36.jpg";
 import img28 from "./assets/images/39.jpg";
+import img29 from "./assets/images/rc3.jpg";
+import img30 from "./assets/images/rc4.jpg";
+import img31 from "./assets/images/rc5.jpg";
 
 // Generated SVG Logo Data URI based on description: White text, Red dot, Green leaf
 export const LOGO_URL =
@@ -47,6 +50,29 @@ export const PACKAGES: WeddingPackage[] = [
       video: "Cinematic Video (Approx. 3 min)",
       reels: "1 Instagram Reel",
     },
+  },
+  {
+    id: "ring-ceremony",
+    title: "Ring Ceremony",
+    price: "₹30,000",
+    duration: "Full Day Coverage",
+    description:
+      "Elegant and intimate coverage of your ring ceremony with professional photography and cinematography.",
+    isPremium: false,
+    highlightColor: "purple",
+    features: {
+      rawPhotos: "Unlimited Raw Photos",
+      editedPhotos: 20,
+      video: "1 Cinematic Full Video + 1 Teaser",
+      reels: "1 Reel",
+    },
+    manpower: [
+      {
+        event: "Ring Ceremony",
+        details: ["1 Photographer, 1 Cinematographer, 1 Light Assistant"],
+      },
+    ],
+    extra: ["Album: ₹5,000 extra (30 pages, 100 pictures)"],
   },
   {
     id: "wedding-standard",
@@ -179,7 +205,7 @@ export const PORTFOLIO_ITEMS = [
     id: 5,
     category: "Ring Ceremony",
     url: img5,
-    title: "Haldi Ceremony",
+    title: "The Ring Exchange",
   },
   {
     id: 6,
@@ -197,7 +223,7 @@ export const PORTFOLIO_ITEMS = [
     id: 8,
     category: "Ring Ceremony",
     url: img8,
-    title: "Sacred Fire",
+    title: "Ring Ceremony Bliss",
   },
   {
     id: 9,
@@ -318,6 +344,24 @@ export const PORTFOLIO_ITEMS = [
     category: "Wedding",
     url: img27,
     title: "Ceremonial Bliss",
+  },
+  {
+    id: 29,
+    category: "Ring Ceremony",
+    url: img29,
+    title: "Exchanging Promises",
+  },
+  {
+    id: 30,
+    category: "Ring Ceremony",
+    url: img30,
+    title: "Ring and Promise",
+  },
+  {
+    id: 31,
+    category: "Ring Ceremony",
+    url: img31,
+    title: "Sincerity in Rings",
   },
 ];
 

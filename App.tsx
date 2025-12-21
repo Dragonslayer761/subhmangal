@@ -7,11 +7,25 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import img from './assets/images/MAN_3088.jpg';
 import img2 from './assets/images/DSC_1128.jpg';
 import img3 from './assets/images/SEN_1949.jpg';
-import img4 from './assets/images/ANK_4971_1.jpg';
 import LOGO_URL from './assets/images/logo.png';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    eventDate: '',
+    message: '',
+    selectedPackage: ''
+  });
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { name, eventDate, message, selectedPackage } = formData;
+    const whatsappMessage = `Hi, I'm ${name}. Interested in ${selectedPackage || 'your services'}. Event date: ${eventDate}. Message: ${message}`;
+    const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+    setFormData({ name: '', eventDate: '', message: '', selectedPackage: '' });
+  };
 
   return (
     <div className="min-h-screen bg-darkBg text-stone-200 font-sans selection:bg-premiumGold selection:text-black overflow-x-hidden">
@@ -144,7 +158,7 @@ const App: React.FC = () => {
             <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-premiumGold to-transparent mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
             {PACKAGES.map((pkg) => (
               <PackageCard key={pkg.id} pkg={pkg} />
             ))}
@@ -246,18 +260,49 @@ const App: React.FC = () => {
                 <span className="w-8 h-[1px] bg-premiumGold"></span>
                 Send an Enquiry
               </h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4" onSubmit={handleFormSubmit}>
                 <div className="space-y-1">
                   <label className="block text-xs uppercase tracking-wider text-neutral-500">Name</label>
-                  <input type="text" className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors placeholder-neutral-700" placeholder="Enter your name" />
+                  <input
+                    type="text"
+                    className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors placeholder-neutral-700"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    required
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="block text-xs uppercase tracking-wider text-neutral-500">Package</label>
+                  <select
+                    className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors"
+                    value={formData.selectedPackage}
+                    onChange={(e) => setFormData(prev => ({ ...prev, selectedPackage: e.target.value }))}
+                    required
+                  >
+                    <option value="">Select a package</option>
+                    {PACKAGES.map((pkg) => (
+                      <option key={pkg.id} value={pkg.title}>{pkg.title} - {pkg.price}</option>
+                    ))}
+                  </select>
                 </div>
                 <div className="space-y-1">
                   <label className="block text-xs uppercase tracking-wider text-neutral-500">Event Date</label>
-                  <input type="date" className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors" />
+                  <input
+                    type="date"
+                    className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors"
+                    value={formData.eventDate}
+                    onChange={(e) => setFormData(prev => ({ ...prev, eventDate: e.target.value }))}
+                  />
                 </div>
                 <div className="space-y-1">
                   <label className="block text-xs uppercase tracking-wider text-neutral-500">Message</label>
-                  <textarea className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors h-24 resize-none placeholder-neutral-700" placeholder="Tell us about your wedding plans..."></textarea>
+                  <textarea
+                    className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors h-24 resize-none placeholder-neutral-700"
+                    placeholder="Tell us about your wedding plans..."
+                    value={formData.message}
+                    onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                  ></textarea>
                 </div>
                 <button className="w-full bg-gradient-to-r from-premiumGold to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold py-3 rounded-sm transition-all duration-300 shadow-lg shadow-amber-900/20 mt-2">
                   Request Callback
