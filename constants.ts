@@ -179,10 +179,11 @@ export const ADD_ONS: AddOnService[] = [
 export const PORTFOLIO_ITEMS = [
   {
     id: 1,
-    category: "Ring Ceremony",
-    url: img1,
-    title: "Couple Shoot",
+    category: "Wedding",
+    url: img7,
+    title: "The Grand Entrance",
   },
+
   {
     id: 2,
     category: "Wedding",
@@ -215,9 +216,9 @@ export const PORTFOLIO_ITEMS = [
   },
   {
     id: 7,
-    category: "Wedding",
-    url: img7,
-    title: "The Grand Entrance",
+    category: "Ring Ceremony",
+    url: img1,
+    title: "Couple Shoot",
   },
   {
     id: 8,

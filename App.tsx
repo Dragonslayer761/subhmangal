@@ -15,22 +15,23 @@ const App: React.FC = () => {
     name: '',
     eventDate: '',
     message: '',
-    selectedPackage: ''
+    selectedPackage: '',
+    location: ''
   });
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, eventDate, message, selectedPackage } = formData;
-    const whatsappMessage = `Hi, I'm ${name}. Interested in ${selectedPackage || 'your services'}. Event date: ${eventDate}. Message: ${message}`;
+    const { name, eventDate, message, selectedPackage, location } = formData;
+    const whatsappMessage = `Hi, I'm ${name}. Interested in ${selectedPackage || 'your services'}. Event date: ${eventDate}. Location: ${location}. Message: ${message}`;
     const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
-    setFormData({ name: '', eventDate: '', message: '', selectedPackage: '' });
+    setFormData({ name: '', eventDate: '', message: '', selectedPackage: '', location: '' });
   };
 
   const handleBookPackage = (packageTitle: string) => {
     setFormData(prev => ({ ...prev, selectedPackage: packageTitle }));
     // Scroll to contact section
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('enquiry-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -215,12 +216,12 @@ const App: React.FC = () => {
               </p>
 
               <div className="space-y-6">
-                <div className="flex items-center gap-4 text-neutral-300 group">
+                <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} className="flex items-center gap-4 text-neutral-300 group">
                   <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-premiumGold group-hover:bg-premiumGold group-hover:text-black transition-colors">
                     <Phone className="w-5 h-5" />
                   </div>
                   <span className="group-hover:text-white transition-colors">{CONTACT_INFO.phone}</span>
-                </div>
+                </a>
                 <a href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-neutral-300 group">
                   <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-premiumGold group-hover:bg-premiumGold group-hover:text-black transition-colors">
                     <FaWhatsapp width={20} height={20} />
@@ -266,7 +267,7 @@ const App: React.FC = () => {
                 <span className="w-8 h-[1px] bg-premiumGold"></span>
                 Send an Enquiry
               </h3>
-              <form className="space-y-4" onSubmit={handleFormSubmit}>
+              <form id="enquiry-form" className="space-y-4" onSubmit={handleFormSubmit}>
                 <div className="space-y-1">
                   <label className="block text-xs uppercase tracking-wider text-neutral-500">Name</label>
                   <input
@@ -299,6 +300,16 @@ const App: React.FC = () => {
                     className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors"
                     value={formData.eventDate}
                     onChange={(e) => setFormData(prev => ({ ...prev, eventDate: e.target.value }))}
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="block text-xs uppercase tracking-wider text-neutral-500">Location</label>
+                  <input
+                    type="text"
+                    className="w-full bg-neutral-900/50 border border-neutral-800 rounded-sm px-3 py-3 text-white focus:outline-none focus:border-premiumGold transition-colors placeholder-neutral-700"
+                    placeholder="Enter event location"
+                    value={formData.location}
+                    onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
                   />
                 </div>
                 <div className="space-y-1">
