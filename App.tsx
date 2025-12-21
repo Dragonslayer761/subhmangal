@@ -27,6 +27,12 @@ const App: React.FC = () => {
     setFormData({ name: '', eventDate: '', message: '', selectedPackage: '' });
   };
 
+  const handleBookPackage = (packageTitle: string) => {
+    setFormData(prev => ({ ...prev, selectedPackage: packageTitle }));
+    // Scroll to contact section
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-darkBg text-stone-200 font-sans selection:bg-premiumGold selection:text-black overflow-x-hidden">
 
@@ -160,7 +166,7 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
             {PACKAGES.map((pkg) => (
-              <PackageCard key={pkg.id} pkg={pkg} />
+              <PackageCard key={pkg.id} pkg={pkg} onBookPackage={handleBookPackage} />
             ))}
           </div>
 

@@ -4,9 +4,10 @@ import { Check, Camera, Video, Film, Users, Star } from 'lucide-react';
 
 interface PackageCardProps {
   pkg: WeddingPackage;
+  onBookPackage?: (packageTitle: string) => void;
 }
 
-export const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
+export const PackageCard: React.FC<PackageCardProps> = ({ pkg, onBookPackage }) => {
   const getBorderColor = () => {
     switch (pkg.highlightColor) {
       case 'gold': return 'border-amber-500/50 shadow-[0_0_30px_rgba(212,175,55,0.15)]';
@@ -117,14 +118,15 @@ export const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
         </div>
       )}
 
-      <a href="#contact">
-        <button className={`w-full mt-auto py-3 px-4 rounded-sm transition-all duration-300 font-serif tracking-wide ${pkg.isPremium
+      <button
+        onClick={() => onBookPackage?.(pkg.title)}
+        className={`w-full mt-auto py-3 px-4 rounded-sm transition-all duration-300 font-serif tracking-wide ${pkg.isPremium
           ? 'bg-premiumGold text-black hover:bg-white font-bold'
           : 'bg-neutral-800 text-white hover:bg-neutral-700 hover:text-premiumGold'
-          }`}>
-          Book This Package
-        </button>
-      </a>
+          }`}
+      >
+        Book This Package
+      </button>
     </div>
   );
 };
