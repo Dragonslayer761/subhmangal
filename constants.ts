@@ -8,7 +8,7 @@ export const PACKAGES: WeddingPackage[] = [
   {
     id: "pre-wedding",
     title: "Pre-Wedding Love Tales",
-    price: "₹20,000",
+    price: "₹25,000",
     description:
       "Capture the romance before the big day with our cinematic storytelling.",
     isPremium: false,
@@ -278,6 +278,12 @@ export const PORTFOLIO_ITEMS = [
     category: "Wedding",
     url: "../assets/images/37.jpg",
     title: "Ceremonial Bliss",
+  },
+  {
+    id: 28,
+    category: "Wedding",
+    url: "../assets/images/39.jpg",
+    title: "Smiles of Joy",
   },
   {
     id: 27,
