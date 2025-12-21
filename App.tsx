@@ -43,7 +43,7 @@ const App: React.FC = () => {
           <div className="flex items-center justify-between h-24">
             <div className="flex-shrink-0 flex items-center">
               {/* Logo Image */}
-              <img src={LOGO_URL} alt="Subhmangal Photography" className="h-[10rem] w-auto object-contain" />
+              <img src={LOGO_URL} alt="Subhmangal Photography" className="h-[12rem] w-auto object-contain" />
             </div>
 
             {/* Desktop Menu */}
