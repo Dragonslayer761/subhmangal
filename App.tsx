@@ -11,6 +11,7 @@ import LOGO_URL from './assets/images/logo.png';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const [formData, setFormData] = useState({
     name: '',
     eventDate: '',
@@ -49,11 +50,11 @@ const App: React.FC = () => {
             {/* Desktop Menu */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-8">
-                <a href="#home" className="text-neutral-300 hover:text-premiumGold transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide">Home</a>
-                <a href="#portfolio" className="text-neutral-300 hover:text-premiumGold transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide">Portfolio</a>
-                <a href="#packages" className="text-neutral-300 hover:text-premiumGold transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide">Packages</a>
-                <a href="#addons" className="text-neutral-300 hover:text-premiumGold transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide">Services</a>
-                <a href="#contact" className="border border-premiumGold text-premiumGold hover:bg-premiumGold hover:text-black px-6 py-2 rounded-full text-sm font-medium transition-all duration-300">Contact Us</a>
+                <a href="#home" onClick={() => setActiveSection('home')} className={`${activeSection === 'home' ? 'text-premiumGold' : 'text-neutral-300'} hover:text-premiumGold transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide`}>Home</a>
+                <a href="#portfolio" onClick={() => setActiveSection('portfolio')} className={`${activeSection === 'portfolio' ? 'text-premiumGold' : 'text-neutral-300'} hover:text-premiumGold transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide`}>Portfolio</a>
+                <a href="#packages" onClick={() => setActiveSection('packages')} className={`${activeSection === 'packages' ? 'text-premiumGold' : 'text-neutral-300'} hover:text-premiumGold transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide`}>Packages</a>
+                <a href="#addons" onClick={() => setActiveSection('addons')} className={`${activeSection === 'addons' ? 'text-premiumGold' : 'text-neutral-300'} hover:text-premiumGold transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide`}>Services</a>
+                <a href="#contact" onClick={() => setActiveSection('contact')} className={`${activeSection === 'contact' ? 'bg-premiumGold text-black' : 'border border-premiumGold text-premiumGold'} hover:bg-premiumGold hover:text-black px-6 py-2 rounded-full text-sm font-medium transition-all duration-300`}>Contact Us</a>
               </div>
             </div>
 
@@ -73,11 +74,11 @@ const App: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-neutral-950 border-b border-neutral-800">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="#home" className="text-gray-300 hover:text-premiumGold block px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsMenuOpen(false)}>Home</a>
-              <a href="#portfolio" className="text-gray-300 hover:text-premiumGold block px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsMenuOpen(false)}>Portfolio</a>
-              <a href="#packages" className="text-gray-300 hover:text-premiumGold block px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsMenuOpen(false)}>Packages</a>
-              <a href="#addons" className="text-gray-300 hover:text-premiumGold block px-3 py-2 rounded-md text-base font-medium" onClick={() => setIsMenuOpen(false)}>Services</a>
-              <a href="#contact" className="text-premiumGold font-bold block px-3 py-2 rounded-md text-base" onClick={() => setIsMenuOpen(false)}>Contact Us</a>
+              <a href="#home" className={`${activeSection === 'home' ? 'text-premiumGold' : 'text-gray-300'} hover:text-premiumGold block px-3 py-2 rounded-md text-base font-medium`} onClick={() => { setActiveSection('home'); setIsMenuOpen(false); }}>Home</a>
+              <a href="#portfolio" className={`${activeSection === 'portfolio' ? 'text-premiumGold' : 'text-gray-300'} hover:text-premiumGold block px-3 py-2 rounded-md text-base font-medium`} onClick={() => { setActiveSection('portfolio'); setIsMenuOpen(false); }}>Portfolio</a>
+              <a href="#packages" className={`${activeSection === 'packages' ? 'text-premiumGold' : 'text-gray-300'} hover:text-premiumGold block px-3 py-2 rounded-md text-base font-medium`} onClick={() => { setActiveSection('packages'); setIsMenuOpen(false); }}>Packages</a>
+              <a href="#addons" className={`${activeSection === 'addons' ? 'text-premiumGold' : 'text-gray-300'} hover:text-premiumGold block px-3 py-2 rounded-md text-base font-medium`} onClick={() => { setActiveSection('addons'); setIsMenuOpen(false); }}>Services</a>
+              <a href="#contact" className="text-premiumGold font-bold block px-3 py-2 rounded-md text-base" onClick={() => { setActiveSection('contact'); setIsMenuOpen(false); }}>Contact Us</a>
             </div>
           </div>
         )}
