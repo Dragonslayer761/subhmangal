@@ -16,12 +16,13 @@ export interface WeddingPackage {
   id: string;
   title: string;
   price?: string;
+  discountedPrice?: string;
   duration?: string;
   description: string;
   features: PackageFeatures;
   manpower?: ManpowerDetails[];
   isPremium: boolean;
-  highlightColor: 'red' | 'green' | 'gold';
+  highlightColor: "red" | "green" | "gold" | "purple";
 }
 
 export interface AddOnService {

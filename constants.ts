@@ -31,10 +31,6 @@ import img29 from "./assets/images/rc3.jpg";
 import img30 from "./assets/images/rc4.jpg";
 import img31 from "./assets/images/rc5.jpg";
 
-// Generated SVG Logo Data URI based on description: White text, Red dot, Green leaf
-export const LOGO_URL =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 80'%3E%3Cstyle%3E.text%7Bfont-family:'Playfair Display',serif;font-size:40px;fill:white;font-weight:bold;%3E%3C/style%3E%3Ctext x='10' y='55' class='text'%3ESUBHMANGAL%3C/text%3E%3Ccircle cx='285' cy='50' r='4' fill='%23ef4444'/%3E%3Cpath d='M250 25 Q 270 10 285 25 Q 270 40 250 25' fill='none' stroke='%2322c55e' stroke-width='2'/%3E%3C/svg%3E";
-
 export const PACKAGES: WeddingPackage[] = [
   {
     id: "pre-wedding",
@@ -72,12 +68,12 @@ export const PACKAGES: WeddingPackage[] = [
         details: ["1 Photographer, 1 Cinematographer, 1 Light Assistant"],
       },
     ],
-    extra: ["Album: ₹5,000 extra (30 pages, 100 pictures)"],
   },
   {
     id: "wedding-standard",
     title: "Traditional Wedding to Reception",
     price: "₹1,20,000",
+    discountedPrice: "₹1,10,000",
     duration: "3 Days Coverage",
     description:
       "Comprehensive coverage for both bride and groom sides, capturing every ritual from wedding to reception.",
@@ -112,6 +108,7 @@ export const PACKAGES: WeddingPackage[] = [
     id: "wedding-premium",
     title: "Premium Royal Celebration",
     price: "₹1,40,000",
+    discountedPrice: "₹1,30,000",
     duration: "4 Days Coverage",
     description:
       "The ultimate luxury package covering everything from Aiburobhat to Reception with exclusive extras.",
@@ -146,7 +143,7 @@ export const PACKAGES: WeddingPackage[] = [
       },
       {
         event: "Reception",
-        details: ["2 Photographers, 1 Cinematographer"],
+        details: ["2 Photographers, 2 Cinematographer"],
       },
     ],
   },

@@ -40,7 +40,16 @@ export const PackageCard: React.FC<PackageCardProps> = ({ pkg, onBookPackage }) 
       <div className="mb-8 text-center border-b border-white/5 pb-6">
         <h3 className={`font-serif text-2xl mb-3 ${getTextColor()} tracking-wide`}>{pkg.title}</h3>
         {pkg.price ? (
-          <div className="text-4xl font-light text-white mb-2">{pkg.price}</div>
+          <div className="mb-2">
+            {pkg.discountedPrice ? (
+              <div className="flex flex-col items-center justify-center gap-3">
+                <div className="text-2xl font-light text-neutral-500 line-through">{pkg.price}</div>
+                <div className="text-4xl font-light text-premiumGold">{pkg.discountedPrice}</div>
+              </div>
+            ) : (
+              <div className="text-4xl font-light text-white">{pkg.price}</div>
+            )}
+          </div>
         ) : (
           <div className="text-2xl font-light text-neutral-500 mb-2">Contact for Quote</div>
         )}

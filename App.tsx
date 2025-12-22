@@ -8,6 +8,7 @@ import img from './assets/images/MAN_3088.jpg';
 import img2 from './assets/images/DSC_1128.jpg';
 import img3 from './assets/images/SEN_1949.jpg';
 import LOGO_URL from './assets/images/logo.png';
+import ComingSoon from './components/ComingSoon';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -342,6 +343,9 @@ const App: React.FC = () => {
       </footer>
     </div>
   );
+  //    return (
+  //     <ComingSoon />
+  //   );
 };
 
 export default App;
