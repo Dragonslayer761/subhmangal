@@ -71,7 +71,7 @@ export const PACKAGES: WeddingPackage[] = [
   },
   {
     id: "wedding-standard",
-    title: "Traditional Wedding to Reception",
+    title: "The Signature Wedding Story",
     price: "₹1,20,000",
     discountedPrice: "₹1,10,000",
     duration: "3 Days Coverage",
@@ -81,8 +81,9 @@ export const PACKAGES: WeddingPackage[] = [
     highlightColor: "red",
     features: {
       rawPhotos: "Unlimited Raw Photos",
-      editedPhotos: 120,
-      album: "40 Pages High Gloss Non-Tearable Album",
+      editedPhotos: 150,
+      album:
+        "60 Pages Non-Tearable Album (Non tearable High gloss or matt finish)",
       video: "Cinematic Full Video (35-40 min) + Teaser",
       reels: "1 Reel",
     },
@@ -117,7 +118,8 @@ export const PACKAGES: WeddingPackage[] = [
     features: {
       rawPhotos: "Unlimited Raw Photos",
       editedPhotos: 240,
-      album: "Two 40 Pages High Gloss Non-Tearable Albums",
+      album:
+        "Two 40 Pages Non-Tearable Album (Non tearable High gloss or matt finish)",
       video: "Cinematic Full Video (35-40 min) + Teaser",
       reels: "2 Reels",
       extra: [
