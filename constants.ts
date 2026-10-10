@@ -33,43 +33,6 @@ import img31 from "./assets/images/rc5.jpg";
 
 export const PACKAGES: WeddingPackage[] = [
   {
-    id: "pre-wedding",
-    title: "Pre-Wedding Love Tales",
-    price: "₹25,000",
-    description:
-      "Capture the romance before the big day with our cinematic storytelling.",
-    isPremium: false,
-    highlightColor: "green",
-    features: {
-      rawPhotos: "Unlimited Raw Photos",
-      editedPhotos: 30,
-      video: "Cinematic Video (Approx. 3 min)",
-      reels: "1 Instagram Reel",
-    },
-  },
-  {
-    id: "ring-ceremony",
-    title: "Ring Ceremony",
-    price: "₹30,000",
-    duration: "Full Day Coverage",
-    description:
-      "Elegant and intimate coverage of your ring ceremony with professional photography and cinematography.",
-    isPremium: false,
-    highlightColor: "purple",
-    features: {
-      rawPhotos: "Unlimited Raw Photos",
-      editedPhotos: 20,
-      video: "1 Cinematic Full Video + 1 Teaser",
-      reels: "1 Reel",
-    },
-    manpower: [
-      {
-        event: "Ring Ceremony",
-        details: ["1 Photographer, 1 Cinematographer, 1 Light Assistant"],
-      },
-    ],
-  },
-  {
     id: "wedding-standard",
     title: "The Signature Wedding Story",
     price: "₹1,20,000",
@@ -77,7 +40,7 @@ export const PACKAGES: WeddingPackage[] = [
     duration: "3 Days Coverage",
     description:
       "Comprehensive coverage for both bride and groom sides, capturing every ritual from wedding to reception.",
-    isPremium: false,
+    badge: "Best value for money",
     highlightColor: "red",
     features: {
       rawPhotos: "Unlimited Raw Photos",
@@ -113,7 +76,7 @@ export const PACKAGES: WeddingPackage[] = [
     duration: "4 Days Coverage",
     description:
       "The ultimate luxury package covering everything from Aiburobhat to Reception with exclusive extras.",
-    isPremium: true,
+    badge: "Premium Choice",
     highlightColor: "gold",
     features: {
       rawPhotos: "Unlimited Raw Photos",
@@ -146,6 +109,43 @@ export const PACKAGES: WeddingPackage[] = [
       {
         event: "Reception",
         details: ["2 Photographers, 2 Cinematographer"],
+      },
+    ],
+  },
+  {
+    id: "pre-wedding",
+    title: "Pre-Wedding Love Tales",
+    price: "₹25,000",
+    description:
+      "Capture the romance before the big day with our cinematic storytelling.",
+    badge: "",
+    highlightColor: "green",
+    features: {
+      rawPhotos: "Unlimited Raw Photos",
+      editedPhotos: 30,
+      video: "Cinematic Video (Approx. 3 min)",
+      reels: "1 Instagram Reel",
+    },
+  },
+  {
+    id: "ring-ceremony",
+    title: "Ring Ceremony",
+    price: "₹30,000",
+    duration: "Full Day Coverage",
+    description:
+      "Elegant and intimate coverage of your ring ceremony with professional photography and cinematography.",
+    badge: "",
+    highlightColor: "purple",
+    features: {
+      rawPhotos: "Unlimited Raw Photos",
+      editedPhotos: 30,
+      video: "1 Cinematic Full Video + 1 Teaser",
+      reels: "1 Reel",
+    },
+    manpower: [
+      {
+        event: "Ring Ceremony",
+        details: ["1 Photographer, 1 Cinematographer, 1 Light Assistant"],
       },
     ],
   },

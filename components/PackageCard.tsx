@@ -8,6 +8,9 @@ interface PackageCardProps {
 }
 
 export const PackageCard: React.FC<PackageCardProps> = ({ pkg, onBookPackage }) => {
+  const badgeText = pkg.badge?.trim();
+  const hasBadge = Boolean(badgeText);
+
   const getBorderColor = () => {
     switch (pkg.highlightColor) {
       case 'gold': return 'border-amber-500/50 shadow-[0_0_30px_rgba(212,175,55,0.15)]';
@@ -28,12 +31,22 @@ export const PackageCard: React.FC<PackageCardProps> = ({ pkg, onBookPackage }) 
     }
   };
 
+  const getBadgeClasses = () => {
+    switch (pkg.highlightColor) {
+      case 'gold': return 'bg-gradient-to-r from-amber-400 to-amber-700 text-black';
+      case 'red': return 'bg-gradient-to-r from-red-400 to-red-700 text-white';
+      case 'green': return 'bg-gradient-to-r from-emerald-500 to-emerald-700 text-white';
+      case 'purple': return 'bg-gradient-to-r from-violet-500 to-violet-700 text-white';
+      default: return 'bg-neutral-700 text-white';
+    }
+  };
+
   return (
     <div className={`relative bg-neutral-900/40 backdrop-blur-sm border ${getBorderColor()} p-8 rounded-sm flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:bg-neutral-900/60 group`}>
-      {pkg.isPremium && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-premiumGold to-amber-500 text-black px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-1 shadow-lg">
-          <Star className="w-3 h-3 fill-black" />
-          Premium Choice
+      {hasBadge && (
+        <div className={`absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-1 shadow-lg ${getBadgeClasses()}`}>
+          <Star className="w-3 h-3 fill-current" />
+          {badgeText}
         </div>
       )}
 
@@ -129,7 +142,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({ pkg, onBookPackage }) 
 
       <button
         onClick={() => onBookPackage?.(pkg.title)}
-        className={`w-full mt-auto py-3 px-4 rounded-sm transition-all duration-300 font-serif tracking-wide ${pkg.isPremium
+        className={`w-full mt-auto py-3 px-4 rounded-sm transition-all duration-300 font-serif tracking-wide ${hasBadge
           ? 'bg-premiumGold text-black hover:bg-white font-bold'
           : 'bg-neutral-800 text-white hover:bg-neutral-700 hover:text-premiumGold'
           }`}
