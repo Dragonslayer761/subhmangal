@@ -3,7 +3,7 @@ import { PackageCard } from './components/PackageCard';
 import { PortfolioGallery } from './components/PortfolioGallery';
 import { PACKAGES, ADD_ONS, CONTACT_INFO } from './constants';
 import { Camera, Heart, Mail, Phone, MapPin, Instagram, Menu, X, ArrowDown } from 'lucide-react';
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import img from './assets/images/MAN_3088.jpg';
 import img2 from './assets/images/DSC_1128.jpg';
 import img3 from './assets/images/SEN_1949.jpg';
@@ -244,6 +244,14 @@ const App: React.FC = () => {
                       <FaFacebook className={"w-5 h-5"} />
                     </div>
                     <span className="group-hover:text-white transition-colors">SubhMangal</span>
+                  </div>
+                </a>
+                <a href={CONTACT_INFO.youtube} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-neutral-300 group">
+                  <div className="flex items-center gap-4 text-neutral-300 group">
+                    <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-premiumGold group-hover:bg-premiumGold group-hover:text-black transition-colors">
+                      <FaYoutube className={"w-5 h-5"} />
+                    </div>
+                    <span className="group-hover:text-white transition-colors">Subhmangal Photography</span>
                   </div>
                 </a>
 
