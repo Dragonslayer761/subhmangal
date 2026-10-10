@@ -21,7 +21,7 @@ export interface WeddingPackage {
   description: string;
   features: PackageFeatures;
   manpower?: ManpowerDetails[];
-  isPremium: boolean;
+  badge?: string;
   highlightColor: "red" | "green" | "gold" | "purple";
 }
 
