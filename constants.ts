@@ -370,5 +370,6 @@ export const CONTACT_INFO = {
   instagram:
     "https://www.instagram.com/subhmangal.kolkata?igsh=djNrcGxqNm1sNzAx",
   facebook: "https://www.facebook.com/share/1CnhNW6vpj/",
+  youtube: "https://www.youtube.com/@SUBHMANGAL-g9y",
   address: "Kolkata, West Bengal",
 };
