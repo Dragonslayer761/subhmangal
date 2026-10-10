@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PackageCard } from './components/PackageCard';
 import { PortfolioGallery } from './components/PortfolioGallery';
 import { PACKAGES, ADD_ONS, CONTACT_INFO } from './constants';
@@ -35,6 +35,19 @@ const App: React.FC = () => {
     // Scroll to contact section
     document.getElementById('enquiry-form')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const sectionId = hash.replace('#', '');
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const offset = 110;
+    const top = section.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }, []);
 
   return (
     <div className="min-h-screen bg-darkBg text-stone-200 font-sans selection:bg-premiumGold selection:text-black overflow-x-hidden">
@@ -86,7 +99,7 @@ const App: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden" style={{ scrollMarginTop: '110px' }}>
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 bg-darkBg z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-black/50 z-10"></div>
@@ -155,7 +168,7 @@ const App: React.FC = () => {
       <PortfolioGallery />
 
       {/* Packages Section */}
-      <section id="packages" className="py-24 px-4 sm:px-6 lg:px-8 bg-darkBg relative">
+      <section id="packages" className="py-24 px-4 sm:px-6 lg:px-8 bg-darkBg relative" style={{ scrollMarginTop: '110px' }}>
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-premiumGold/5 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-premiumGold/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -183,7 +196,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Add-ons Section */}
-      <section id="addons" className="py-20 bg-neutral-900/20 border-y border-white/5">
+      <section id="addons" className="py-20 bg-neutral-900/20 border-y border-white/5" style={{ scrollMarginTop: '110px' }}>
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-serif text-white mb-2">Enhance Your Memories</h2>
@@ -208,7 +221,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-4 bg-darkBg relative overflow-hidden">
+      <section id="contact" className="py-24 px-4 bg-darkBg relative overflow-hidden" style={{ scrollMarginTop: '110px' }}>
         <div className="max-w-4xl mx-auto bg-neutral-900/30 backdrop-blur-md rounded-lg p-8 md:p-12 border border-white/5 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
